@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Happy Boyfriend's Day! ❤️</title>
+  
+  <!-- Google Fonts for authentic handmade scrapbook aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fredoka:wght@600;700;800&family=Indie+Flower&family=Playfair+Display:ital,wght@1,700;1,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Outer Desk Backdrop (Aesthetic lavender-blue studio background like reference) -->
+  <div class="desk-backdrop">
+    
+    <!-- Phone Frame / Scrapbook Journal Container -->
+    <main class="phone-container" id="phoneContainer">
+
+      <!-- Dynamic Confetti / Sparkle Canvas -->
+      <canvas id="effectsCanvas" class="effects-canvas"></canvas>
+
+      <!-- Floating Hearts Overlay -->
+      <div id="heartsContainer" class="floating-hearts-layer" aria-hidden="true"></div>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 1: OPENING DENIM SCRAPBOOK SCREEN                -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen active" id="screen-1" data-screen="1">
+        <div class="denim-bg"></div>
+        <div class="paper-rip top-rip"></div>
+        
+        <!-- Corner Decorations -->
+        <div class="decor-corner top-left">
+          <img src="assets/decorations/denim_star.svg" class="decor-item denim-star-lg spin-subtle" alt="denim star">
+          <div class="star-outline star-white star-sm">✦</div>
+          <div class="star-outline star-white star-xs">✧</div>
+        </div>
+
+        <div class="decor-corner top-right">
+          <div class="washi-tape-strip tape-corner-tr"></div>
+          <div class="sparkle-cluster">
+            <span class="sparkle gold">★</span>
+            <span class="sparkle white">✦</span>
+          </div>
+        </div>
+
+        <div class="decor-corner bottom-left">
+          <button class="camera-btn" id="cameraStickerBtn" title="Click to snap!">
+            <img src="assets/decorations/camera.png" class="decor-item retro-camera" alt="vintage camera">
+            <span class="camera-flash-hint">snap! 📸</span>
+          </button>
+          <div class="star-outline star-white star-sm">✦</div>
+        </div>
+
+        <div class="decor-corner bottom-right">
+          <img src="assets/decorations/denim_star.svg" class="decor-item denim-star-huge" alt="denim star">
+          <div class="star-outline star-gold star-md">✧</div>
+        </div>
+
+        <!-- Central Main Title -->
+        <div class="screen1-content">
+          <div class="title-embroidery-box">
+            <h1 class="patch-title">
+              <span class="title-word word-happy" id="txt-s1-line1">HAPPY</span>
+              <span class="title-word word-bf" id="txt-s1-line2">BOYFRIEND'S</span>
+              <span class="title-word word-day">
+                <span class="patch-heart">🤍</span>
+                <span id="txt-s1-line3">DAY</span>
+                <span class="patch-heart">🤍</span>
+              </span>
+            </h1>
+          </div>
+
+          <!-- Stitched Continue Button -->
+          <div class="screen1-action">
+            <button class="pill-btn handmade-label-btn" id="btn-screen1-continue">
+              <span class="dashed-border">
+                <span class="btn-text" id="txt-s1-btn">≈ CONTINUE</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 2: ACCEPT THE GIFT                                -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen" id="screen-2" data-screen="2">
+        <div class="grid-paper-bg"></div>
+        <div class="navy-frame-border"></div>
+
+        <!-- Scrapbook Corner Flourishes -->
+        <div class="corner-flourish corner-tl">
+          <img src="assets/decorations/denim_star.svg" class="mini-star-decor" alt="star">
+          <div class="gingham-patch patch-tl"></div>
+        </div>
+        <div class="corner-flourish corner-tr">
+          <div class="sparkle-spiderweb"></div>
+        </div>
+        <div class="corner-flourish corner-bl">
+          <div class="gingham-patch patch-bl"></div>
+        </div>
+        <div class="corner-flourish corner-br">
+          <div class="sparkle-spiderweb web-br"></div>
+        </div>
+
+        <div class="screen-body center-flex">
+          <h2 class="serif-italic-title" id="txt-s2-title">PLEASE ACCEPT THE GIFT</h2>
+
+          <!-- Cute TBH Creature (Happy) -->
+          <div class="character-container yippee-bounce">
+            <img src="assets/decorations/creature_happy.svg" class="tbh-character happy-creature" alt="Cute puppy eyes character">
+          </div>
+
+          <!-- Yes / No Buttons -->
+          <div class="button-choice-row">
+            <button class="dark-red-pill-btn" id="btn-accept-yes">
+              <span id="txt-s2-yes">YES ❤️</span>
+            </button>
+            <button class="dark-red-pill-btn btn-secondary-red" id="btn-accept-no">
+              <span id="txt-s2-no">NO</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 3: WHY DID YOU CLICK NO                           -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen" id="screen-3" data-screen="3">
+        <div class="grid-paper-bg"></div>
+        <div class="navy-frame-border"></div>
+
+        <div class="corner-flourish corner-tl">
+          <img src="assets/decorations/denim_star.svg" class="mini-star-decor" alt="star">
+        </div>
+        <div class="corner-flourish corner-tr">
+          <div class="sparkle-spiderweb"></div>
+        </div>
+
+        <div class="screen-body center-flex">
+          <h2 class="serif-italic-title shake-anim" id="txt-s3-title">WHY DID YOU CLICK NO!</h2>
+
+          <!-- Crying Creature with Puddle -->
+          <div class="character-container crying-bounce">
+            <img src="assets/decorations/creature_cry.svg" class="tbh-character cry-creature" alt="Crying character with huge tears">
+          </div>
+
+          <!-- Try Again Button -->
+          <div class="single-action-row">
+            <button class="dark-red-pill-btn heartbeat-subtle" id="btn-try-again">
+              <span id="txt-s3-btn">TRY AGAIN</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 4: GIFT SELECTION                                 -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen" id="screen-4" data-screen="4">
+        <div class="grid-paper-bg"></div>
+        <div class="navy-frame-border"></div>
+
+        <div class="corner-flourish corner-tl">
+          <img src="assets/decorations/denim_star.svg" class="mini-star-decor" alt="star">
+        </div>
+
+        <div class="screen-body gift-selection-layout">
+          <h2 class="serif-bold-title" id="txt-s4-title">Choose Your Gifts</h2>
+
+          <!-- Three Interactive Floating Gifts -->
+          <div class="gifts-grid">
+            <!-- Gift 1: Envelope -->
+            <div class="gift-card-item float-item-1" data-gift-id="envelope" id="gift-envelope">
+              <div class="gift-sticker-wrap">
+                <img src="assets/decorations/envelope.png" class="gift-sticker-img" alt="Royal Blue Love Letter Envelope">
+                <span class="selection-badge">✓ ❤️</span>
+              </div>
+              <span class="gift-label">Love Letter</span>
+            </div>
+
+            <!-- Gift 2: Bouquet of White Roses -->
+            <div class="gift-card-item float-item-2" data-gift-id="bouquet" id="gift-bouquet">
+              <div class="gift-sticker-wrap">
+                <img src="assets/decorations/bouquet.png" class="gift-sticker-img bouquet-img" alt="White Roses & Calla Lilies Bouquet">
+                <span class="selection-badge">✓ ❤️</span>
+              </div>
+              <span class="gift-label">White Roses</span>
+            </div>
+
+            <!-- Gift 3: Dark Blue Present -->
+            <div class="gift-card-item float-item-3" data-gift-id="present" id="gift-present">
+              <div class="gift-sticker-wrap">
+                <img src="assets/decorations/giftbox.png" class="gift-sticker-img present-img" alt="Dark Blue Wrapped Gift Box">
+                <span class="selection-badge">✓ ❤️</span>
+              </div>
+              <span class="gift-label">Surprise Box</span>
+            </div>
+          </div>
+
+          <p class="gift-hint-text" id="giftHint">Tap any gift to select your surprise ♡</p>
+
+          <!-- Open Button -->
+          <div class="gift-action-container">
+            <button class="open-gifts-btn pulse-glow" id="btn-open-gifts">
+              <span id="txt-s4-open">OPEN →</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 5: THE LOVE LETTER & 4 POLAROIDS                  -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen" id="screen-5" data-screen="5">
+        <div class="grid-paper-bg"></div>
+        <div class="navy-frame-border letter-page-border"></div>
+
+        <div class="screen-body letter-page-layout">
+          
+          <!-- Scrapbook Board with 4 Polaroids & Central Letter -->
+          <div class="scrapbook-board">
+            
+            <!-- Polaroid 1 (Top Left) -->
+            <div class="polaroid-frame polaroid-tl" id="polaroid-1" data-photo-idx="0">
+              <div class="washi-tape tape-polaroid-tl"></div>
+              <div class="polaroid-photo-inner">
+                <img src="assets/photos/photo1.jpg" id="img-photo-1" alt="Boyfriend Photo 1">
+              </div>
+              <div class="polaroid-caption" id="cap-photo-1">handsome bf ♡</div>
+            </div>
+
+            <!-- Polaroid 3 (Top Right) -->
+            <div class="polaroid-frame polaroid-tr" id="polaroid-3" data-photo-idx="2">
+              <div class="washi-tape tape-polaroid-tr"></div>
+              <div class="polaroid-photo-inner">
+                <img src="assets/photos/photo3.jpg" id="img-photo-3" alt="Boyfriend Photo 3">
+              </div>
+              <div class="polaroid-caption" id="cap-photo-3">smiling with you ♡</div>
+            </div>
+
+            <!-- Center Love Letter Card -->
+            <div class="letter-card-container">
+              <div class="paperclip-decor">
+                <img src="assets/decorations/paperclip.svg" alt="Paperclip">
+              </div>
+              
+              <div class="kraft-letter-card">
+                <div class="card-inner-scallop">
+                  <div class="letter-scroll-area">
+                    <p class="handwritten-letter-text" id="txt-love-letter">
+                      <!-- Populated dynamically from config.js -->
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 2 (Bottom Left) -->
+            <div class="polaroid-frame polaroid-bl" id="polaroid-2" data-photo-idx="1">
+              <div class="washi-tape tape-polaroid-bl"></div>
+              <div class="polaroid-photo-inner">
+                <img src="assets/photos/photo2.jpg" id="img-photo-2" alt="Boyfriend Photo 2">
+              </div>
+              <div class="polaroid-caption" id="cap-photo-2">waterfall date ♡</div>
+            </div>
+
+            <!-- Polaroid 4 (Bottom Right) -->
+            <div class="polaroid-frame polaroid-br" id="polaroid-4" data-photo-idx="3">
+              <div class="washi-tape tape-polaroid-br"></div>
+              <div class="polaroid-photo-inner">
+                <img src="assets/photos/photo4.jpg" id="img-photo-4" alt="Boyfriend Photo 4">
+              </div>
+              <div class="polaroid-caption" id="cap-photo-4">handsome boy ♡</div>
+            </div>
+
+            <!-- Polaroid 5 (Bottom Center Scrapbook Accent) -->
+            <div class="polaroid-frame polaroid-bc" id="polaroid-5" data-photo-idx="4">
+              <div class="washi-tape tape-polaroid-bc"></div>
+              <div class="polaroid-photo-inner">
+                <img src="assets/photos/photo5.jpg" id="img-photo-5" alt="Boyfriend Photo 5">
+              </div>
+              <div class="polaroid-caption" id="cap-photo-5">forever & always ♡</div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Navigation Button -->
+          <div class="bottom-page-nav">
+            <button class="scrapbook-nav-btn" id="btn-screen5-next">
+              <span id="txt-s5-btn">NEXT PAGE →</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 6: HANDSOME BOYFRIEND                             -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen" id="screen-6" data-screen="6">
+        <div class="grid-paper-bg"></div>
+        <div class="navy-frame-border"></div>
+
+        <div class="corner-flourish corner-tl">
+          <img src="assets/decorations/denim_star.svg" class="mini-star-decor" alt="star">
+        </div>
+
+        <div class="screen-body handsome-bf-layout">
+          
+          <div class="handsome-content-grid">
+            <!-- Left Column: Title & Cute Couple Hugging -->
+            <div class="handsome-left-col">
+              <h2 class="cute-doodle-title" id="txt-handsome-title">
+                i have the most<br>handsome bf &lt;3
+              </h2>
+
+              <div class="couple-sticker-wrap">
+                <img src="assets/decorations/couple.png" class="couple-sticker-img" alt="Cute couple hugging doodle">
+              </div>
+
+              <div class="for-you-hand-doodle">
+                <span class="doodle-flower">🌼</span>
+                <span class="doodle-text">FOR YOU :)</span>
+              </div>
+            </div>
+
+            <!-- Right Column: Large White Roses Bouquet -->
+            <div class="handsome-right-col">
+              <div class="bouquet-display-wrap float-gentle">
+                <img src="assets/decorations/bouquet.png" class="big-bouquet-img" alt="Large white roses bouquet with navy ribbon">
+                <div class="tucked-card">
+                  <span class="tucked-card-text" id="txt-flower-tag">FOR YOU ♡</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stars and Hearts Scatter -->
+          <div class="scatter-decorations">
+            <span class="scatter-item s-star-1">★</span>
+            <span class="scatter-item s-heart-1">♡</span>
+            <span class="scatter-item s-star-2">✦</span>
+            <span class="scatter-item s-heart-2">❤️</span>
+          </div>
+
+          <!-- Bottom Button -->
+          <div class="bottom-page-nav">
+            <button class="scrapbook-nav-btn" id="btn-screen6-next">
+              <span id="txt-s6-btn">NEXT ♡</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 7: LOVE SONG & MUSIC PLAYER                       -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen" id="screen-7" data-screen="7">
+        <div class="grid-paper-bg"></div>
+        <div class="navy-frame-border"></div>
+
+        <div class="screen-body music-page-layout">
+          
+          <div class="music-collage-grid">
+            
+            <!-- Left Card: Vinyl Record & Quote -->
+            <div class="navy-record-card">
+              <div class="washi-tape-strip tape-record-top"></div>
+              
+              <!-- Vinyl Record Player Graphic -->
+              <div class="record-player-graphic">
+                <div class="vinyl-disc" id="vinylDisc">
+                  <div class="vinyl-groove"></div>
+                  <div class="vinyl-groove groove-mid"></div>
+                  <div class="vinyl-center-label">
+                    <span class="vinyl-heart">💙</span>
+                  </div>
+                </div>
+                <div class="tonearm-arm" id="toneArm"></div>
+              </div>
+
+              <!-- Quote Text -->
+              <div class="record-quote-text" id="txt-record-quote">
+                AND SUDDENLY,<br>
+                ALL THE LOVE<br>
+                SONGS WERE ABOUT<br>
+                <em>you &lt;3</em>
+              </div>
+
+              <div class="card-sparkles">
+                <span>✦</span>
+                <span>✧</span>
+              </div>
+            </div>
+
+            <!-- Right Card: I Love You So Much Character -->
+            <div class="white-hug-card">
+              <div class="card-blue-border">
+                <div class="stickman-wrapper">
+                  <img src="assets/decorations/stickman_hug.svg" class="stickman-img" alt="Cute character with long arms">
+                </div>
+                <div class="long-love-text" id="txt-long-love">
+                  I LOVE YOU<br>
+                  <span class="stretched-so">SOOOOOOO... !</span><br>
+                  <strong>MUCH ❤️</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Section: Disco Ball & Music Player -->
+          <div class="player-section-wrap">
+            <div class="discoball-container">
+              <img src="assets/decorations/discoball.png" class="mini-discoball spin-very-slow" alt="Sparkling disco ball">
+            </div>
+
+            <!-- Music Player Component -->
+            <div class="cute-music-player">
+              <div class="player-cover-box">
+                <img src="assets/decorations/album_tu_hi_mera.jpg" id="playerCoverImg" class="album-thumb" alt="Album Cover">
+                <div class="sound-wave-bars" id="soundWaves">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <div class="player-meta-box">
+                <div class="song-info">
+                  <span class="song-title" id="playerSongTitle">Tu Hi Mera</span>
+                  <span class="song-artist" id="playerArtistName">Pritam Chakraborty</span>
+                </div>
+
+                <!-- Custom Progress Bar -->
+                <div class="custom-progress-container" id="progressContainer">
+                  <div class="progress-bar-fill" id="progressBarFill"></div>
+                  <div class="progress-scrubber" id="progressScrubber"></div>
+                </div>
+
+                <div class="time-row">
+                  <span class="time-cur" id="playerTimeCurrent">0:00</span>
+                  <span class="time-dur" id="playerTimeDuration">3:45</span>
+                </div>
+              </div>
+
+              <div class="player-controls">
+                <button class="play-toggle-btn" id="btnPlayPause" aria-label="Play or pause music">
+                  <span class="play-icon" id="playIcon">▶</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Button -->
+          <div class="bottom-page-nav">
+            <button class="scrapbook-nav-btn" id="btn-screen7-next">
+              <span id="txt-s7-btn">ONE LAST THING →</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- SCREEN 8: FINAL LOVE MESSAGE                             -->
+      <!-- ======================================================== -->
+      <section class="scrapbook-screen" id="screen-8" data-screen="8">
+        <div class="deep-navy-starry-bg"></div>
+        
+        <!-- Starry Sky Accents -->
+        <div class="night-stars-layer">
+          <span class="n-star s1">✦</span>
+          <span class="n-star s2">★</span>
+          <span class="n-star s3">✧</span>
+          <span class="n-star s4">✦</span>
+          <span class="n-star s5">★</span>
+          <span class="n-heart h1">🤍</span>
+          <span class="n-heart h2">💙</span>
+        </div>
+
+        <div class="screen-body center-flex final-screen-layout">
+          
+          <div class="final-card-wrapper">
+            <div class="washi-tape-strip tape-final-top"></div>
+            
+            <div class="final-paper-card">
+              <div class="final-card-decor-top">
+                <img src="assets/decorations/denim_star.svg" class="final-star-mini" alt="star">
+                <span class="final-heart-glow">❤️</span>
+                <img src="assets/decorations/denim_star.svg" class="final-star-mini" alt="star">
+              </div>
+
+              <div class="final-handwritten-body">
+                <p id="txt-final-message">
+                  <!-- Populated from config.js -->
+                </p>
+              </div>
+
+              <div class="final-card-decor-bottom">
+                <span class="kiss-emoji">💋</span>
+                <span class="forever-tag">Forever & Always</span>
+                <span class="kiss-emoji">💋</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Replay Button -->
+          <div class="final-action-row">
+            <button class="pill-btn restart-pill-btn pulse-glow" id="btn-replay">
+              <span class="btn-stitch" id="txt-s8-btn">ONE MORE TIME ❤️</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hidden Audio Element for Music -->
+      <audio id="bgAudio" preload="auto" loop></audio>
+
+      <!-- Fullscreen Photo Modal for Tapping Polaroids -->
+      <div class="photo-modal" id="photoModal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-card">
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close">✕</button>
+          <button class="modal-nav-btn modal-prev-btn" id="modalPrevBtn" aria-label="Previous Photo">❮</button>
+          <button class="modal-nav-btn modal-next-btn" id="modalNextBtn" aria-label="Next Photo">❯</button>
+          <div class="modal-polaroid">
+            <img src="" id="modalImg" alt="Enlarged Polaroid">
+            <p class="modal-caption" id="modalCaption"></p>
+            <div class="modal-footer-row">
+              <span class="modal-counter" id="modalCounter">1 / 5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

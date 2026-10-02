@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <!-- Soft blush filter -->
+    <filter id="blush-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+    </filter>
+    <!-- Eye gradient -->
+    <radialGradient id="eye-shading" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#4a0e17" />
+      <stop offset="40%" stop-color="#2a080d" />
+      <stop offset="85%" stop-color="#0f0305" />
+      <stop offset="100%" stop-color="#000000" />
+    </radialGradient>
+    <radialGradient id="eye-glow" cx="50%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#ff4d6d" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#c9184a" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#800f2f" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <g transform="translate(0, 5)">
+    <!-- Body and limbs -->
+    <!-- Left Hand / Paw -->
+    <path d="M 68 135 C 50 135 30 142 22 152 C 16 160 22 170 34 168 C 42 166 48 174 44 182 C 40 190 48 196 56 190 C 64 184 72 175 78 162 Z" 
+          fill="#FFFFFF" stroke="#18181B" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- Right Hand / Paw -->
+    <path d="M 172 135 C 190 135 210 142 218 152 C 224 160 218 170 206 168 C 198 166 192 174 196 182 C 200 190 192 196 184 190 C 176 184 168 175 162 162 Z" 
+          fill="#FFFFFF" stroke="#18181B" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- Feet / Bottom body -->
+    <path d="M 85 175 L 85 200 C 85 208 95 212 102 208 C 108 204 112 195 115 185 C 120 185 125 185 125 185 C 128 195 132 204 138 208 C 145 212 155 208 155 200 L 155 175 Z" 
+          fill="#FFFFFF" stroke="#18181B" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- Main Head / Torso Base -->
+    <path d="M 75 140 C 60 115 58 65 120 62 C 182 65 180 115 165 140 C 160 160 155 185 120 185 C 85 185 80 160 75 140 Z" 
+          fill="#FFFFFF" stroke="#18181B" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- Cute Blush -->
+    <ellipse cx="68" cy="148" rx="22" ry="14" fill="#ff4d6d" opacity="0.6" filter="url(#blush-glow)" />
+    <ellipse cx="172" cy="148" rx="22" ry="14" fill="#ff4d6d" opacity="0.6" filter="url(#blush-glow)" />
+
+    <!-- LEFT EYE -->
+    <g transform="translate(48, 92)">
+      <!-- Sclera/Pupil Outer -->
+      <ellipse cx="36" cy="36" rx="34" ry="34" fill="url(#eye-shading)" stroke="#18181B" stroke-width="4" />
+      <!-- Warm bottom glow -->
+      <ellipse cx="36" cy="45" rx="28" ry="20" fill="url(#eye-glow)" />
+      <!-- Big round shine highlight -->
+      <ellipse cx="26" cy="24" rx="10" ry="12" fill="#FFFFFF" transform="rotate(-15 26 24)" />
+      <!-- Secondary sparkle highlight -->
+      <circle cx="48" cy="46" r="4.5" fill="#FFFFFF" opacity="0.9" />
+      <!-- Tiny heart reflection -->
+      <path d="M 38 48 C 38 45 42 43 44 45 C 46 43 50 45 50 48 C 50 52 44 55 44 55 C 44 55 38 52 38 48 Z" fill="#FFFFFF" opacity="0.95" />
+    </g>
+
+    <!-- RIGHT EYE -->
+    <g transform="translate(120, 92)">
+      <!-- Sclera/Pupil Outer -->
+      <ellipse cx="36" cy="36" rx="34" ry="34" fill="url(#eye-shading)" stroke="#18181B" stroke-width="4" />
+      <!-- Warm bottom glow -->
+      <ellipse cx="36" cy="45" rx="28" ry="20" fill="url(#eye-glow)" />
+      <!-- Big round shine highlight -->
+      <ellipse cx="26" cy="24" rx="10" ry="12" fill="#FFFFFF" transform="rotate(-15 26 24)" />
+      <!-- Secondary sparkle highlight -->
+      <circle cx="48" cy="46" r="4.5" fill="#FFFFFF" opacity="0.9" />
+      <!-- Tiny heart reflection -->
+      <path d="M 38 48 C 38 45 42 43 44 45 C 46 43 50 45 50 48 C 50 52 44 55 44 55 C 44 55 38 52 38 48 Z" fill="#FFFFFF" opacity="0.95" />
+    </g>
+
+    <!-- Tiny cute mouth / chin crease -->
+    <path d="M 115 152 Q 120 156 125 152" fill="none" stroke="#18181B" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>
